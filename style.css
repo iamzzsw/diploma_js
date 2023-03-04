@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+h4 {
+  padding: 10px 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(89, 135, 177);
+}
+body header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: rgba(58, 89, 118, 0.639);
+  margin: 20px;
+  padding: 35px;
+}
+body .boards {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+body .boards_item {
+  width: 30%;
+  min-height: 120px;
+  background-color: rgba(58, 89, 118, 0.639);
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px;
+  align-self: flex-start;
+}
+body .boards_item button {
+  width: 100%;
+  height: 35px;
+  background-color: rgb(58, 89, 118);
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+body .boards_item .taskTodo {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  border: solid 1px #000;
+  display: flex;
+  justify-content: space-between;
+}
+body .boards_item .taskTodo button {
+  width: 10%;
+  margin: 0;
+}
+body .boards_item .taskTodo h2,
+body .boards_item .taskTodo p,
+body .boards_item .taskTodo span {
+  color: #000;
+}
+body .boards_item .taskTodo .taskTodo_info {
+  width: 80%;
+}
+body .boards_item .taskTodo .time-user {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+body .boards_item .inProgress {
+  background-color: rgb(253, 251, 143);
+}
+body .boards_item .todo {
+  background-color: #fff;
+}
+body .boards_item .done {
+  background-color: rgb(183, 253, 151);
+}
+body .modal,
+body .modal-edit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .modal-wrap,
+body .modal-edit-wrap {
+  background-color: rgb(89, 135, 177);
+  border-radius: 5px;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+body .modal-wrap button,
+body .modal-edit-wrap button {
+  height: 35px;
+  background-color: rgba(58, 89, 118, 0.639);
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+body .modal-wrap #close,
+body .modal-edit-wrap #close {
+  position: absolute;
+  top: 15%;
+  right: 18%;
+  width: 5%;
+}
+body .modal-wrap #create,
+body .modal-edit-wrap #create {
+  margin: 20px;
+}
+body .modal-wrap p,
+body .modal-edit-wrap p {
+  font-size: 28px;
+  margin-top: 40px;
+  font-weight: 600;
+}
+body .modal-wrap form,
+body .modal-edit-wrap form {
+  color: #000;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+body .modal-wrap form input,
+body .modal-edit-wrap form input {
+  color: #000;
+  margin: 20px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+body .modal-wrap form input #description,
+body .modal-edit-wrap form input #description {
+  height: 40%;
+}
+body .modal-wrap form select,
+body .modal-edit-wrap form select {
+  color: #000;
+  width: 40%;
+  margin: 20px;
+  padding: 5px;
+  font-size: 16px;
+}
+body .modal-wrap form select option,
+body .modal-edit-wrap form select option {
+  color: #000;
+}
+body .modal-none {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

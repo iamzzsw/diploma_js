@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trello</title>
+</head>
+
+<body>
+    <header>
+        <p>Trello</p>
+        <div id="clock"></div>
+    </header>
+    <main class="boards">
+        <div class="boards_item boards_item_todo">
+
+        </div>
+        <div class="boards_item boards_item_inProgress">
+
+        </div>
+        <div class="boards_item boards_item_done">
+
+        </div>
+    </main>
+
+ <section class="modal modal-none">
+        <div class="modal-wrap">
+            <button id="close">X</button>
+            <p>Create task</p> 
+            <form>
+                <input type="text" name="titile" placeholder="tittle" id="titile">
+                <input type="textarea" id='description' name="description" placeholder="description">
+                <select id="user" name="user">
+                    
+                </select>
+                <button id="create">create</button>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="modal-edit modal-none">
+        <div class="modal-wrap">
+            <button id="close">X</button>
+            <p>Edit task</p> 
+            <form>
+                <input type="text" name="titile-edit" id="titile-edit">
+                <input type="textarea" id='description-edit' name="description-edit" >
+                <select id="user-edit" name="user-edit">
+                    
+                </select>
+                <button id="edit">edit</button>
+
+            </form>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
