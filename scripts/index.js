@@ -1,22 +1,9 @@
-window.onload = function () {
-    window.setInterval(function () {
-        var now = new Date();
-        var clock = document.getElementById("clock");
-        clock.innerHTML = now.toLocaleTimeString();
-    }, 1000);
-};
+import { getTasksFromLocalStorage, setTasksToLocalStorage } from './localStorage.js';
+import { clock } from './clock.js';
+import {renderTasksTodo} from './renderTasksTodo.js'
+import { getUsers, renderUser } from './getUsers.js'
 
-function getTasksFromLocalStorage() {
-    const tasks = localStorage.getItem('tasks');
-
-    if (tasks) return JSON.parse(tasks);
-
-    return [];
-}
-
-function setTasksToLocalStorage(tasks) {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-}
+clock();
 
 const tasks = {
     list: getTasksFromLocalStorage(),
@@ -84,35 +71,6 @@ const tasks = {
     }
 }
 
-const renderTasksTodo = (task) => {
-    return `
-    <li class='taskTodo ${task.status}' id=${task.id}>
-        <div class="taskTodo_info">
-            <h2>${task.title}</h2>
-            <p>${task.description}</p>
-            </br><div class="time-user"><span>${task.user}</span> <span>${task.time}</span></div> 
-            <button data-task-id=${task.id}  class='prev'><</button> 
-            <button data-task-id=${task.id} class='next'>></button>
-        </div>
-        <button data-task-id=${task.id} class='delete'>X</button>
-    </li>
-      `
-}
-
-const getUsers = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-
-    return response.json();
-}
-
-const renderUser = (userArr, user) => {
-    userArr.forEach((userObj) => {
-        user.innerHTML += `
-        <option>${userObj.username}</option>
-        `
-    })
-}
-
 const modal = document.querySelector('.modal');
 const close = modal.querySelector('#close');
 const create = modal.querySelector('#create');
@@ -125,12 +83,8 @@ let userEdit = modalEdit.querySelector('#user-edit');
 
 getUsers().then((users) => {
     renderUser(users, user);
-});
-
-getUsers().then((users) => {
     renderUser(users, userEdit);
 });
-
 
 close.addEventListener('click', () => {
     modal.classList.add('modal-none');
